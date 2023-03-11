@@ -25,7 +25,7 @@ img, a, ul, li, label
     box-sizing: border-box;
     background-color: #fbede2;
     /* width: 60%; */
-    border-radius: 5px;
+    border-radius: 0.5rem;
     padding: 1.8rem 1.8rem;
     overflow: hidden;
 }
@@ -44,7 +44,8 @@ img, a, ul, li, label
 .accordion__label {
     display: flex;
     flex-direction: column;
-    padding: 0.6rem 0;
+    padding: 1.1rem 1rem;
+    /* padding: 0.5rem 1rem; */
     font-weight: 800;
     color: rgb(95, 95, 224);
  } 
@@ -59,7 +60,6 @@ img, a, ul, li, label
 .accordion__item {
     display: flex;
     flex-direction: column; 
-    padding: 0.5rem 1rem;
 }
 
 
@@ -69,24 +69,13 @@ img, a, ul, li, label
     margin-left: auto;
     background-image: url('/assets/icons/icon-cross.png');
     background-position: center;
-    width: 0; 
-    height: 0;
     transition: width 200ms, height 200ms;
-}
-
-.accordion:hover {
-    cursor: ;
-}
-
-.accordion:hover .accordion__label {
-    color: rgb(0, 0, 0);
-}
-
-.accordion:hover .accordion__label__icon {
-    transition: width 300ms, height 300ms, opacity 300ms;
     width: 1.8rem;
     height: 1.8rem;
-} 
+
+}
+
+
 
 hr {
     border-top: 0.03rem solid rgba(102, 102, 102, 0.526);
@@ -100,8 +89,8 @@ hr {
     opacity: .25;
     max-width: 0%;
     max-height: 0%;
-    transition: scale 400ms, opacity 150ms, max-width 400ms, max-height 400ms, margin 300ms;
-    transition-delay: 500ms;
+    transition: scale 500ms, opacity 150ms, max-width 500ms, max-height 500ms, margin 500ms;
+    transition-delay: 700ms;
     margin: 0;
     align-self: center;
 } 
@@ -113,23 +102,14 @@ hr {
     opacity: 1;
     max-width: 100%;
     max-height: 100%;
-    transition: scale 200ms, opacity 100ms, margin 300ms;
+    transition: scale 500ms, opacity 500ms, margin 500ms;
 }  
 
 .accordion__radio:checked ~ .accordion__label p {
     color: #000000;
 }
 
-.accordion__item:hover .meme_img  {
-    margin: 1rem 1rem;
-    max-width: 100%;
-    max-height: 100%;
-    scale: 1;
-    opacity: 1;
-    transition: scale 300ms, opacity 300ms, max-width 300ms, max-height 300ms, margin 300ms;
-    transition-delay: 300ms;
 
-} 
 
 .accordion__radio:checked ~ .accordion__label .accordion__label__icon {
     transform:rotate(0.125turn);
@@ -150,9 +130,8 @@ hr {
     .accordion__item p {
         font-size: 1.4rem;
     }
-    .accordion__radio:checked ~ .accordion__label .meme_img,
-    .accordion__item:hover .meme_img
-    {
+    .accordion__radio:checked ~ .accordion__label .meme_img
+        {
         margin: 1.8rem 5rem 0.5rem;
     }
 }
@@ -164,6 +143,21 @@ hr {
     }
 
   
+    .accordion:hover .accordion__label {
+        color: rgb(0, 0, 0);
+    }
+    
+    .accordion__label__icon {
+        width: 0; 
+        height: 0;
+        transition: width 200ms, height 200ms;
+    }
+
+    .accordion:hover .accordion__label__icon {
+        transition: width 500ms, height 500ms, opacity 500ms;
+        width: 1.8rem;
+        height: 1.8rem;
+    } 
     
     .accordion__label {
         cursor: pointer;
@@ -176,6 +170,19 @@ hr {
         margin: 2rem 10rem 0.5rem;
     }
 
+    .accordion__item:hover .meme_img  {
+        margin: 1.8rem 5rem 0.5rem;
+        max-width: 100%;
+        max-height: 100%;
+        scale: 1;
+        opacity: 1;
+        transition: scale 500ms, opacity 500ms, max-width 500ms, max-height 500ms, margin 500ms;
+        transition-delay: 300ms;
+    } 
+
+    .accordion__item:hover .meme_img
+    {
+    }
 
 }
 
