@@ -67,7 +67,7 @@ img, a, ul, li, label
     content: '';
     display: inline-block;
     margin-left: auto;
-    background-image: url('/cssBayan/assets/icons/icon-cross.png');
+    background-image: url('/cssBayan/cssBayan/assets/icons/icon-cross.png');
     background-position: center;
     transition: width 200ms, height 200ms;
     width: 1.8rem;
