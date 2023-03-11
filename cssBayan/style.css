@@ -1,0 +1,308 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+img, a, ul, li, label
+ {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ .container {
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.accordion {
+    box-sizing: border-box;
+    background-color: #fbede2;
+    /* width: 60%; */
+    border-radius: 0.5rem;
+    padding: 1.8rem 1.8rem;
+    overflow: hidden;
+}
+
+.h1 {
+    text-align: left;
+    font-size: 1.4rem;
+    margin: 0 0 0.4rem;
+}
+
+.accordion__radio {
+    display: none;
+}
+
+
+.accordion__label {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1rem;
+    /* padding: 0.5rem 1rem; */
+    font-weight: 800;
+    color: rgb(95, 95, 224);
+ } 
+
+ .accordion__label p {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+ }
+
+
+.accordion__item {
+    display: flex;
+    flex-direction: column; 
+}
+
+
+.accordion__label__icon {
+    content: '';
+    display: inline-block;
+    margin-left: auto;
+    background-image: url('/assets/icons/icon-cross.png');
+    background-position: center;
+    transition: width 200ms, height 200ms;
+    width: 1.8rem;
+    height: 1.8rem;
+
+}
+
+
+
+hr {
+    border-top: 0.03rem solid rgba(102, 102, 102, 0.526);
+    border-bottom: 0;
+    margin: 0;
+}
+
+
+.meme_img {
+    scale: 0;
+    opacity: .25;
+    max-width: 0%;
+    max-height: 0%;
+    transition: scale 500ms, opacity 150ms, max-width 500ms, max-height 500ms, margin 500ms;
+    transition-delay: 700ms;
+    margin: 0;
+    align-self: center;
+} 
+
+.accordion__radio:checked ~ .accordion__label .meme_img {
+    margin: 1rem 1rem;
+
+    scale: 1;
+    opacity: 1;
+    max-width: 100%;
+    max-height: 100%;
+    transition: scale 500ms, opacity 500ms, margin 500ms;
+}  
+
+.accordion__radio:checked ~ .accordion__label p {
+    color: #000000;
+}
+
+
+
+.accordion__radio:checked ~ .accordion__label .accordion__label__icon {
+    transform:rotate(0.125turn);
+}
+
+.accordion__item:active .accordion__label{
+    opacity: 0.5;
+}
+
+@media (min-width: 820px) {
+    .accordion {
+        padding: 4% 4%;
+    }
+
+    .h1 {
+        font-size: 2rem;
+    }
+    .accordion__item p {
+        font-size: 1.4rem;
+    }
+    .accordion__radio:checked ~ .accordion__label .meme_img
+        {
+        margin: 1.8rem 5rem 0.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .accordion {
+        padding: 5% 5% 7%;
+    }
+
+  
+    .accordion:hover .accordion__label {
+        color: rgb(0, 0, 0);
+    }
+    
+    .accordion__label__icon {
+        width: 0; 
+        height: 0;
+        transition: width 200ms, height 200ms;
+    }
+
+    .accordion:hover .accordion__label__icon {
+        transition: width 500ms, height 500ms, opacity 500ms;
+        width: 1.8rem;
+        height: 1.8rem;
+    } 
+    
+    .accordion__label {
+        cursor: pointer;
+        margin: 0.2rem 3%;
+    }
+    
+    .accordion__radio:checked ~ .accordion__label .meme_img,
+    .accordion__item:hover .meme_img
+    {
+        margin: 2rem 10rem 0.5rem;
+    }
+
+    .accordion__item:hover .meme_img  {
+        margin: 1.8rem 5rem 0.5rem;
+        max-width: 100%;
+        max-height: 100%;
+        scale: 1;
+        opacity: 1;
+        transition: scale 500ms, opacity 500ms, max-width 500ms, max-height 500ms, margin 500ms;
+        transition-delay: 300ms;
+    } 
+
+    .accordion__item:hover .meme_img
+    {
+    }
+
+}
+
+
+/* .meme_img {
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: max-width 600ms, max-height 600ms, opacity 600ms;
+    transition-delay: 500ms;
+}  */
+
+
+/* 
+
+.accordion__radio:checked ~ .meme__content img
+{
+     max-width: 30%;
+    max-height: 100%; 
+    opacity: 1;
+    transition: max-width 300ms, max-height 300ms, opacity 300ms;
+    margin: 20px auto;
+    transition-delay: 500ms
+}  */
+
+/* .accordion__radio:checked ~ .meme__content
+{
+    display: block;
+     max-width: 50%;
+    max-height: 100%; 
+    opacity: 1;
+    transition: max-width 300ms, max-height 300ms, opacity 300ms;
+    margin: 20px auto; 
+    transition-delay: 500ms
+}  */
+
+
+
+ /* .accordion__radio:checked ~ .meme__content .meme_img {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 1;
+    transition: max-width 300ms, max-height 300ms, opacity 300ms;
+}    */
+
+/* .accordion__item:hover .meme__content
+{
+    max-width: 50%;
+    max-height: 100%;
+    opacity: 1;
+    transition: max-width 300ms, max-height 300ms, opacity 300ms;
+    transition-delay: 500ms;
+    margin: 20px auto;
+
+}
+
+.accordion__item:hover .meme__content .meme_img  {
+    max-width:100%;
+    max-height: 100%;
+    opacity: 1;
+    transition: max-width 300ms, max-height 300ms, opacity 300ms;
+}  */
+
+
+
+/* .meme_img {
+    display: inline-block;
+    max-width: 30%;
+    max-height: 30%;
+    opacity: 0;
+    transition: width 300ms, height 300ms, opacity 300ms;
+    transition-delay: 500ms;
+    /* margin: 0;
+} */
+
+
+
+/* .accordion__radio:checked ~ .accordion__label 
+{
+    scale: 1;
+    opacity: 1;
+    max-width: 30%;
+    max-height: 30%;
+    transition: scale 200ms, opacity 200ms;
+    /* margin: 20px auto;  
+}  */
+
+
+/* .accordion__radio:checked ~ .meme__content,
+.accordion__radio:checked ~ .meme__content .meme_img{
+    width: 30%;
+    height: 30%;
+    opacity: 1;
+    transition: width 300ms, height 300ms, opacity 300ms;
+}  */
+
+/* .accordion__label:hover ~ .meme__content .meme_img {
+    width: 30%;
+    height: auto;
+}  */
+/* .accordion__label ~ .meme__content {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: width 300ms, height 300ms, opacity 300ms;
+    transition-delay: 500ms;
+} */
+
+/* .accordion__label:hover ~ .meme__content
+ {
+    width: 30%;
+    height: auto;
+    opacity: 1;
+    transition: width 300ms, height 300ms, opacity 300ms;
+} */
+
+/* .accordion__radio ~ .meme__content {
+    width: 0;
+    height: 0;
+    transition: width 500ms, height 500ms;
+    transition-delay: 250ms;
+}  */
+ 
