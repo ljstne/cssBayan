@@ -23,16 +23,17 @@ img, a, ul, li, label
 
 .accordion {
     box-sizing: border-box;
-    background-color: #f4e9cf;
-    width: 60%;
+    background-color: #fbede2;
+    /* width: 60%; */
     border-radius: 5px;
-    padding: 4rem 2rem;
+    padding: 1.8rem 1.8rem;
     overflow: hidden;
 }
 
 .h1 {
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.4rem;
+    margin: 0 0 0.4rem;
 }
 
 .accordion__radio {
@@ -51,13 +52,14 @@ img, a, ul, li, label
  .accordion__label p {
     display: flex;
     align-items: center;
+    font-size: 0.9rem;
  }
 
 
 .accordion__item {
     display: flex;
     flex-direction: column; 
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 
@@ -70,7 +72,11 @@ img, a, ul, li, label
     width: 0; 
     height: 0;
     transition: width 200ms, height 200ms;
-} 
+}
+
+.accordion:hover {
+    cursor: ;
+}
 
 .accordion:hover .accordion__label {
     color: rgb(0, 0, 0);
@@ -78,8 +84,8 @@ img, a, ul, li, label
 
 .accordion:hover .accordion__label__icon {
     transition: width 300ms, height 300ms, opacity 300ms;
-    width: 1rem;
-    height: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
 } 
 
 hr {
@@ -94,18 +100,20 @@ hr {
     opacity: .25;
     max-width: 0%;
     max-height: 0%;
-    transition: scale 400ms, opacity 150ms, max-width 400ms, max-height 400ms;
+    transition: scale 400ms, opacity 150ms, max-width 400ms, max-height 400ms, margin 300ms;
     transition-delay: 500ms;
     margin: 0;
     align-self: center;
 } 
 
 .accordion__radio:checked ~ .accordion__label .meme_img {
+    margin: 1rem 1rem;
+
     scale: 1;
     opacity: 1;
-    max-width: 30%;
-    max-height: 30%;
-    transition: scale 200ms, opacity 100ms;
+    max-width: 100%;
+    max-height: 100%;
+    transition: scale 200ms, opacity 100ms, margin 300ms;
 }  
 
 .accordion__radio:checked ~ .accordion__label p {
@@ -113,11 +121,12 @@ hr {
 }
 
 .accordion__item:hover .meme_img  {
-    max-width: 30%;
-    max-height: 30%;
+    margin: 1rem 1rem;
+    max-width: 100%;
+    max-height: 100%;
     scale: 1;
     opacity: 1;
-    transition: scale 300ms, opacity 300ms, max-width 300ms, max-height 300ms;
+    transition: scale 300ms, opacity 300ms, max-width 300ms, max-height 300ms, margin 300ms;
     transition-delay: 300ms;
 
 } 
@@ -128,6 +137,46 @@ hr {
 
 .accordion__item:active .accordion__label{
     opacity: 0.5;
+}
+
+@media (min-width: 820px) {
+    .accordion {
+        padding: 4% 4%;
+    }
+
+    .h1 {
+        font-size: 2rem;
+    }
+    .accordion__item p {
+        font-size: 1.4rem;
+    }
+    .accordion__radio:checked ~ .accordion__label .meme_img,
+    .accordion__item:hover .meme_img
+    {
+        margin: 1.8rem 5rem 0.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .accordion {
+        padding: 5% 5% 7%;
+    }
+
+  
+    
+    .accordion__label {
+        cursor: pointer;
+        margin: 0.2rem 3%;
+    }
+    
+    .accordion__radio:checked ~ .accordion__label .meme_img,
+    .accordion__item:hover .meme_img
+    {
+        margin: 2rem 10rem 0.5rem;
+    }
+
+
 }
 
 
