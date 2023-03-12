@@ -117,7 +117,7 @@ hr {
 }
 
 
-.accordion__item:active .accordion__label{
+.accordion__label:active {
     opacity: 0.5;
 }
 
