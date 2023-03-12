@@ -1,0 +1,211 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+img, a, ul, li, label
+ {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ .container {
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.accordion {
+    box-sizing: border-box;
+    background-color: #fbede2;
+    /* width: 60%; */
+    border-radius: 0.5rem;
+    padding: 1.8rem 1.8rem;
+    overflow: hidden;
+}
+
+.h1 {
+    text-align: left;
+    font-size: 1.4rem;
+    margin: 0 0 0.4rem;
+}
+
+.accordion__radio {
+    display: none;
+}
+
+
+.accordion__label {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1rem;
+    /* padding: 0.5rem 1rem; */
+    font-weight: 800;
+    color: rgb(95, 95, 224);
+ } 
+
+ .accordion__label p {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+ }
+
+
+.accordion__item {
+    display: flex;
+    flex-direction: column; 
+}
+
+
+.accordion__label__icon {
+    content: '';
+    display: inline-block;
+    margin-left: auto;
+    background-image: url('/cssBayan/cssBayan/assets/icons/icon-cross.png');
+    background-position: center;
+    transition: width 200ms, height 200ms;
+    width: 1.8rem;
+    height: 1.8rem;
+
+}
+
+
+
+hr {
+    border-top: 0.03rem solid rgba(102, 102, 102, 0.526);
+    border-bottom: 0;
+    margin: 0;
+}
+
+
+.meme_img {
+    scale: 0;
+    opacity: 0;
+    max-width: 0%;
+    max-height: 0%;
+    transition: scale 500ms, opacity 200ms, max-width 500ms, max-height 500ms, margin 500ms;
+    transition-delay: 700ms;
+    margin: 0;
+    align-self: center;
+} 
+
+.accordion__radio:checked ~ .accordion__label .meme_img {
+    margin: 1rem 1rem;
+    scale: 1;
+    opacity: 1;
+    max-width: 100%;
+    max-height: 100%;
+    transition: scale 500ms, opacity 200ms, max-width 500ms, max-height 500ms, margin 500ms;
+}  
+
+.accordion__radio:checked ~ .accordion__label p {
+    color: #000000;
+}
+
+
+
+.accordion__radio:checked ~ .accordion__label .accordion__label__icon,
+.accordion__item:hover .accordion__label .accordion__label__icon {
+    transform:rotate(0.125turn);
+    transition: transform 200ms;
+}
+
+
+.accordion__label:active {
+    opacity: 0.5;
+}
+
+@media (min-width: 390px) {
+    .h1 {
+        font-size: 1.7rem;
+    }
+
+    .accordion__item p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 820px) {
+    .accordion {
+        padding: 4% 4%;
+    }
+
+    .h1 {
+        font-size: 2.1rem;
+    }
+    .accordion__item p {
+        font-size: 1.5rem;
+    }
+    .accordion__radio:checked ~ .accordion__label .meme_img
+        {
+        margin: 1.8rem 5rem 0.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .accordion {
+        padding: 5% 5% 7%;
+    }
+
+    .h1 {
+        font-size: 2.3rem;
+    }
+
+    .accordion:hover .accordion__label {
+        color: rgb(0, 0, 0);
+    }
+    
+    .accordion__item p {
+        font-size: 1.7rem;
+    }
+
+    .accordion__label__icon {
+        width: 0; 
+        height: 0;
+        transition: width 200ms, height 200ms;
+    }
+
+    .accordion:hover .accordion__label__icon {
+        transition: width 500ms, height 500ms, opacity 500ms;
+        width: 1.8rem;
+        height: 1.8rem;
+    } 
+    
+    .accordion__label {
+        cursor: pointer;
+        margin: 0.2rem 3%;
+    }
+    
+    .accordion__radio:checked ~ .accordion__label .meme_img,
+    .accordion__item:hover .meme_img
+    {
+        margin: 2rem 10rem 0.5rem;
+    }
+
+    .accordion__item:hover .meme_img  {
+        margin: 1.8rem 5rem 0.5rem;
+        max-width: 100%;
+        max-height: 100%;
+        scale: 1;
+        opacity: 1;
+        transition: scale 500ms, opacity 200ms, max-width 500ms, max-height 500ms, margin 500ms;
+        transition-delay: 300ms;
+    } 
+
+}
+
+@media (min-width: 1900px)  {
+    .accordion__radio:checked ~ .accordion__label .meme_img,
+    .accordion__item:hover .meme_img
+    {
+        margin: 6rem 13rem 4rem;
+        scale: 1.25;
+    }
+}
